@@ -4,11 +4,13 @@ import App from './App.tsx'
 import './index.css'
 import MyButton from './MyButton.tsx'
 import Heading from './Heading.tsx'
+import Section from './components/Section.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Heading title="Hello World!"/>
     <App />
-    <MyButton/>
+    
+    <Section title="Section test"><MyButton/></Section>
   </React.StrictMode>,
 )

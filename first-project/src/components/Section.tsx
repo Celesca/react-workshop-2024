@@ -1,8 +1,17 @@
-type 
+import { ReactElement, ReactNode } from "react"
 
-const Section = () => {
+type SectionProps = {
+    title: string,
+    children: ReactNode
+}
+
+const Section = ({title = "default", children} : SectionProps) : ReactElement => {
   return (
-    <div>Section</div>
+    <div>
+
+        <h2>{title}</h2>
+        {children}
+    </div>
   )
 }
 
