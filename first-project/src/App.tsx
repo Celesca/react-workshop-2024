@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import Counter from './components/Couter';
+import List from './components/List';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <h1>Counter App</h1>
       <Counter setCount={setCount}>Count = {count}</Counter>
+      <List items={["Apple", "Banana", "Cherry"]} render={(item) => <div>{item}</div>} />
     </>
   )
 }
