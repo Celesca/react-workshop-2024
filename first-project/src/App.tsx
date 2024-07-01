@@ -1,33 +1,20 @@
-import { useState } from 'react';
-import './App.css'
-import Counter from './components/Couter';
-import List from './components/List';
-import HookFormLogin from './components/HookFormLogin';
+import { Route, Routes } from "react-router-dom"
+import Dashboard from "./pages/Dashboard"
+import HookFormLogin from "./pages/HookFormLogin"
+import NotFound from "./pages/NotFound"
+import News from "./pages/News"
 
-function App() {
-
-  const [count, setCount] = useState<number>(0);
-  const isLogin: boolean = false;
-
-  if (isLogin) {
-    return (
-      <>
-        <h1>Counter App</h1>
-        <Counter setCount={setCount}>Count = {count}</Counter>
-        <List items={["Apple", "Banana", "Cherry"]} render={(item) => <div>{item}</div>} />
-        <List items={[1, 2, 3]} render={(item) => <div>{item}</div>} />
-      </>
-    )
-  }
-
-  else {
-    return (
-      <>
-        <HookFormLogin/>
-      </>
-    )
-  }
-
+const App = () => {
+  return (
+    <>
+        <Routes>
+            <Route path="/" element={<Dashboard/>}></Route>
+            <Route path="/list" element={<HookFormLogin/>}></Route>
+            <Route path="/news/:id" element={<News/>}></Route>
+            <Route path="*" element={<NotFound/>}></Route>
+        </Routes>
+    </>
+  )
 }
 
 export default App
