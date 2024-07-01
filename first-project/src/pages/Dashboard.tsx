@@ -1,3 +1,5 @@
+import { Button } from "@mui/material";
+
 const Dashboard = () => {
     const isLogin: boolean = false;
     if (isLogin) {
@@ -7,7 +9,9 @@ const Dashboard = () => {
     }
     else {
         return (
-            <div>Please login to access this page</div>
+            <>
+                <Button variant="contained" color="primary">Login</Button>
+            </>
         )
     }
 }
