@@ -12,6 +12,7 @@ function App() {
       <h1>Counter App</h1>
       <Counter setCount={setCount}>Count = {count}</Counter>
       <List items={["Apple", "Banana", "Cherry"]} render={(item) => <div>{item}</div>} />
+      <List items={[1, 2, 3]} render={(item) => <div>{item}</div>} />
     </>
   )
 }
